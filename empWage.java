@@ -118,3 +118,44 @@ public static final int EMP_RATE_PER_HOUR=20;
         }
 }
 
+
+
+
+//Emp wages for a month code added
+public class empWageForMonthSalary
+{
+       public static final int IS_PART_TIME=1;
+       public static final int IS_FULL_TIME=2;
+       public static final int empRatePerHours=20;
+       public static final int numberOfDays=20;
+
+	public static void main(String[] args)
+	{
+	   int totalSalary=0;
+	   int empHrs=0;
+	   int salary=0;
+
+	   for(int day=1;day<=numberOfDays;day++)
+	   {
+	       double empCheck=Math.floor(Math.random()*10)%3;
+	       switch((int)empCheck)
+	       {
+		  case IS_PART_TIME:
+		  empHrs=8;
+		  break;
+
+		  case IS_FULL_TIME:
+		  empHrs=4;
+		  break;
+
+		  default:
+		  empHrs=0;
+	       }
+	   salary=empHrs*empRatePerHours;
+	   totalSalary=totalSalary+salary;
+	   }
+      System.out.println("Total Salary: "+totalSalary);
+     }
+}
+
+
